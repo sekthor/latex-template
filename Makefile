@@ -10,4 +10,4 @@ all: $(TARGET).tex
 	$(LC) $?
 
 clean:
-	rm *.glo *.aux *.glg *.gls *.ist *.log *.toc
+	rm *.glo *.aux *.glg *.gls *.ist *.log *.toc *.blg *.bbl *.out
