@@ -3,9 +3,42 @@
 %------------------------------------------------------------------------------
 % PACKAGES
 %------------------------------------------------------------------------------
+\usepackage[margin=3cm]{geometry}
 \usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{apacite}
 \usepackage{glossaries}
 \usepackage{graphicx}
+\usepackage{fancyhdr}
+
+
+%------------------------------------------------------------------------------
+% HYPERLINK SETUP
+%------------------------------------------------------------------------------
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+
+%------------------------------------------------------------------------------
+% DOCUMENTENTRIES
+%------------------------------------------------------------------------------
+\title{Title of the Document}
+\author{Firstname Lastname}
+\date{FS 2020}
+\makeatletter
+
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textsc{\@title}}
+\fancyhead[R]{\textsc{\nouppercase{\leftmark}}}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{1pt}
 
 
 
@@ -22,7 +55,7 @@
 % TITLEPAGE
 %------------------------------------------------------------------------------
 \pagenumbering{gobble}
-\input{sections/titlepage.tex}
+\input{sections/00_titlepage.tex}
 
 
 %------------------------------------------------------------------------------
@@ -34,19 +67,19 @@
 %------------------------------------------------------------------------------
 % ABSTRACT
 %------------------------------------------------------------------------------
-\input{sections/abstract.tex}
+\input{sections/00_abstract.tex}
 \pagebreak
 
 
 %------------------------------------------------------------------------------
 % STATEMENT OF AUTHENTICITY
 %------------------------------------------------------------------------------
-\input{sections/statement.tex}
+\input{sections/00_statement.tex}
 \pagebreak
 
 
 %-------------------------------------------------------------------------------
-%   Table of Contents
+% TABLE OF CONTENTS
 %-------------------------------------------------------------------------------
 \addcontentsline{toc}{section}{Table of Contents}
 \tableofcontents
@@ -54,16 +87,24 @@
 
 
 %-------------------------------------------------------------------------------
-%   MAINMATTER
+% MAINMATTER
 %-------------------------------------------------------------------------------
 \pagenumbering{arabic}
 
-\section{Hello World}
 
-Test. \gls{cpu}
+%-------------------------------------------------------------------------------
+% SECTIONS 
+%-------------------------------------------------------------------------------
+\input{sections/01_section.tex}
+\pagebreak
 
 
-
+%-------------------------------------------------------------------------------
+% BIBLIOGRAPHY
+%-------------------------------------------------------------------------------
+\bibliographystyle{apacite}
+\bibliography{bibliography/biliography.bib}
+\pagebreak
 
 
 %------------------------------------------------------------------------------

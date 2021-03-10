@@ -53,3 +53,45 @@ Figures and images are to be put into the template and included like so:
 You can specify a width in the `[width=\textwidth]` brackets. Replace `\textwidth` with `10cm` for example.
 You can set a caption for the image using `\caption{}` and you can also reference the image by setting a `\label{}` and reference it by using `\ref{}`.
 
+### References
+
+The Template uses the APA-reference style for quotations.
+Bibliography entries are to be added in the bibliography file (`bibliography/bibliography.bib`) using regular `BibTeX`-Syntax.
+
+```bibtex
+@article{turing1937computable,
+  title={On computable numbers, with an application to the Entscheidungsproblem},
+  author={Turing, Alan Mathison},
+  journal={Proceedings of the London mathematical society},
+  volume={2},
+  number={1},
+  pages={230--265},
+  year={1937},
+  publisher={Wiley Online Library}
+}
+```
+
+To cite a source from the file there are multiple options.
+To get a citation with the `(name, year)` format, use `\cite{nameOfSource}`.
+It is possible to also specify a pagenumber using `\cite[p.~58]` which will result in `(name, year, p. 58)`.
+For a inline ciatation of format `Name (Year)` or `Name et al (Year)` use `\citeA{nameOfSource}`.
+
+Further information on the `apacite` package can be found in the [documentation](https://ctan.org/pkg/apacite).
+
+When citing sources in a `\caption{}` the citation needs to be protected with `\protect`.
+Example: `\caption{Theoretical constructs from \protect\citeA{Jones01}}`.
+
+### Glossary
+
+Definitions that go into the glossary are specified in `glossary/glossary.tex`.
+A new glossary entry is specified as follows.
+
+```latex
+\newglossaryentry{cpu}
+{
+	name={Central Processing Unit},
+	description={Is what makes computer go bleep bloop}
+}
+```
+
+
