@@ -7,9 +7,10 @@
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
 \usepackage{apacite}
-\usepackage{glossaries}
+\usepackage[acronym, toc]{glossaries}
 \usepackage{graphicx}
 \usepackage{fancyhdr}
+\usepackage[toc,page]{appendix}
 
 
 %------------------------------------------------------------------------------
@@ -113,6 +114,13 @@
 \addcontentsline{toc}{section}{Glossary}
 \printglossaries
 
+
+%------------------------------------------------------------------------------
+% APPENDIX
+%------------------------------------------------------------------------------
+\begin{appendices}
+\input{appendix/appendix.tex}
+\end{appendices}
 
 \end{document}
 
